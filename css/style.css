@@ -1,0 +1,178 @@
+/* RESET PADRÃO PARA EVITAR CONFLITOS DE NAVEGADOR */
+/* O Bootstrap já faz um bom reset, mas este é um bom backup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------- VARIÁVEIS DE CORES E FONTES -------------------- */
+/* Gradiente para o título da marca */
+.gradient-text {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #8a3ab9, #5851db, #405de6);
+    -webkit-background-clip: text; /* Para que o gradiente apareça no texto */
+    -webkit-text-fill-color: transparent; /* Para o texto ser transparente e mostrar o gradiente */
+    background-clip: text;
+    color: transparent; /* Fallback para navegadores que não suportam */
+}
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #66cc33; /* Verde do sapo */
+    --cor-fundo: #f4f7f9; /* Fundo minimalista, cinza claro */
+    --cor-texto: #333; /* Cor do texto para legibilidade */
+    --cor-clara: #fff; /* Branco puro */
+    --cor-gradiente-claro: linear-gradient(135deg, #f0f8ff, #e0f2f7); /* Gradiente suave */
+    --cor-gradiente-escuro: linear-gradient(135deg, #0056b3, #007bff); /* Gradiente mais forte */
+
+    --fonte-principal: 'Nunito', sans-serif; /* Nova fonte principal */
+    --fonte-destaque: 'Fredoka', cursive; /* Nova fonte para títulos */
+}
+
+/* -------------------- ESTILOS GLOBAIS -------------------- */
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Customização do link do navegador */
+.navbar-brand img {
+    border-radius: 50%; /* Faz a logo do sapo ficar redonda */
+}
+.navbar-brand .fw-bold {
+    color: var(--cor-primaria) !important; /* Garante que o texto da marca seja azul */
+}
+.nav-link {
+    font-weight: bold;
+    color: var(--cor-texto) !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--cor-primaria) !important;
+}
+
+/* -------------------- SEÇÕES E TÍTULOS -------------------- */
+section {
+    padding: 6rem 0; /* Espaçamento padrão para seções */
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-destaque);
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem; /* Ajuste para títulos maiores */
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* -------------------- SEÇÃO HERO (PRINCIPAL) -------------------- */
+#hero {
+    min-height: 80vh; /* Ocupa a maior parte da tela */
+    background: var(--cor-gradiente-claro);
+    color: var(--cor-texto);
+    display: flex; /* Para centralizar o conteúdo */
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+#hero h1 {
+    color: var(--cor-primaria); /* Azul */
+}
+
+#hero .btn {
+    background-color: var(--cor-secundaria); /* Verde do sapo */
+    border-color: var(--cor-secundaria);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: #5cb82f; /* Verde um pouco mais escuro */
+    border-color: #5cb82f;
+    transform: translateY(-3px); /* Efeito de 'pulo' */
+}
+
+/* -------------------- CARTÕES DE SERVIÇO -------------------- */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px); /* Efeito de 'pulo' nos cartões */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.card i {
+    color: var(--cor-secundaria); /* Ícones verdes */
+}
+
+/* -------------------- RODAPÉ -------------------- */
+footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 3rem 0;
+}
+footer p {
+    margin-bottom: 0;
+    color: #bbb;
+}
+
+/* -------------------- RESPONSIVIDADE -------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    #hero {
+        min-height: 90vh;
+    }
+    .navbar-brand {
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-toggler {
+        margin-top: 1rem;
+    }
+}
+/* Efeitos de Hover para os cards de serviço */
+#servicos .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#servicos .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação para os ícones */
+#servicos .card i {
+    transition: transform 0.3s ease-in-out;
+}
+
+#servicos .card:hover i {
+    transform: scale(1.2);
+}
+
+/* Efeito nos botões ao passar o mouse */
+.btn-primary:hover, .btn-success:hover, .btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary, .btn-success, .btn-outline-primary {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
